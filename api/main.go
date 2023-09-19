@@ -10,7 +10,8 @@ import (
 func main() {
 	router := chi.NewRouter()
 
-	router.Get("/", basicHandler)
+	router.Get("/hey", basicHandler)
+	router.Post("/post", postFunc)
 
 	server := &http.Server{
 		Addr:    ":8000",
@@ -24,4 +25,13 @@ func main() {
 
 func basicHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("hey"))
+	fmt.Println("hey")
+}
+
+func postFunc(res http.ResponseWriter, req *http.Request) {
+	fmt.Fprint(res, "ok")
+	fmt.Println("post")
+
+	// res.Write([]byte("post"))
+	// res.Write([]byte("post"))
 }
