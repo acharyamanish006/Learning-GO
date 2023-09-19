@@ -30,7 +30,7 @@ func basicHandler(w http.ResponseWriter, r *http.Request) {
 
 func postFunc(res http.ResponseWriter, req *http.Request) {
 	fmt.Fprint(res, "ok")
-	fmt.Println("post")
+	// fmt.Println("post")
 
 	// res.Write([]byte("post"))
 	// res.Write([]byte("post"))
